@@ -11,6 +11,10 @@ namespace apsnetproject.Models
 
         public ICollection<Model> Models {get; set;}
 
+        public int OfficeId { get; set; }
+
+        public Office Office { get; set; }
+
         public Make() // ctor to initialize the instance of the collection to evoid nullrefexception
         {
             Models = new Collection<Model>();
