@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\apsnetproject\\apsnetproject.csproj": {}
+    "d:\\apsnetproject\\apsnetproject.csproj": {}
   },
   "projects": {
-    "D:\\apsnetproject\\apsnetproject.csproj": {
+    "d:\\apsnetproject\\apsnetproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\apsnetproject\\apsnetproject.csproj",
+        "projectUniqueName": "d:\\apsnetproject\\apsnetproject.csproj",
         "projectName": "apsnetproject",
-        "projectPath": "D:\\apsnetproject\\apsnetproject.csproj",
+        "projectPath": "d:\\apsnetproject\\apsnetproject.csproj",
         "packagesPath": "C:\\Users\\Denis\\.nuget\\packages\\",
-        "outputPath": "D:\\apsnetproject\\obj\\",
+        "outputPath": "d:\\apsnetproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
