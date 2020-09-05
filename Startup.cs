@@ -28,7 +28,7 @@ namespace apsnetproject
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<ModelsDBContext>(options => options.UseSqlServer("empty now"));
+            services.AddDbContext<ModelsDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             services.AddControllers();
         }
