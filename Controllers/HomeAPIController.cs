@@ -26,6 +26,13 @@ namespace apsnetproject.Controllers
              return await _context.Makes.Include(m => m.Models).ToListAsync();
 
         }
+
+         [HttpGet("/api/offices")]
+        public async Task<IEnumerable<Office>> GetOffices(){
+             
+             return await _context.Offices.Include(m => m.Makes).ToListAsync();
+
+        }
         
     }
 }
