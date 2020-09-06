@@ -61,3 +61,6 @@ D:\apsnetproject\obj\Debug\netcoreapp3.1\staticwebassets\apsnetproject.StaticWeb
 D:\apsnetproject\obj\Debug\netcoreapp3.1\apsnetproject.dll
 D:\apsnetproject\obj\Debug\netcoreapp3.1\apsnetproject.pdb
 D:\apsnetproject\obj\Debug\netcoreapp3.1\apsnetproject.genruntimeconfig.cache
+D:\apsnetproject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\apsnetproject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\apsnetproject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
