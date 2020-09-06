@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using apsnetproject.Controllers.Resources;
 using apsnetproject.Models;
 using apsnetproject.Persistence;
 using AutoMapper;
@@ -24,9 +25,11 @@ namespace apsnetproject.Controllers
         }
 
         [HttpGet("/")]
-        public async Task<IEnumerable<Make>> Get(){
+        public async Task<IEnumerable<MakeResource>> Get(){
              
-             return await _context.Makes.Include(m => m.Models).ToListAsync();
+             var listOfMakes = await _context.Makes.Include(m => m.Models).ToListAsync();
+
+             return _mapper.Map<List<Make>, List<MakeResource>>(listOfMakes);
 
         }
 
