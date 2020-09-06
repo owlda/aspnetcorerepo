@@ -1,7 +1,16 @@
+using apsnetproject.Controllers.Resources;
+using apsnetproject.Models;
+using AutoMapper;
+
 namespace apsnetproject.Mapping
 {
-    public class MappingProfile
+    public class MappingProfile: Profile
     {
-        
+        public MappingProfile()
+        {
+            CreateMap<Make, MakeResource>();
+
+            CreateMap<Office, OfficeResource>();
+        }
     }
 }
