@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using apsnetproject.Models;
 using apsnetproject.Persistence;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,9 +16,11 @@ namespace apsnetproject.Controllers
     public class HomeAPIController: ControllerBase
     {
          private readonly ModelsDBContext _context;
-        public HomeAPIController(ModelsDBContext context)
+         private readonly IMapper _mapper;
+        public HomeAPIController(ModelsDBContext context, IMapper imapper)
         {
             this._context = context;
+            this._mapper = imapper;
         }
 
         [HttpGet("/")]
