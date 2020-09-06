@@ -11,6 +11,8 @@ namespace apsnetproject.Mapping
             CreateMap<Make, MakeResource>();
 
             CreateMap<Office, OfficeResource>();
+
+            CreateMap<Model, ModelResource>();
         }
     }
 }
