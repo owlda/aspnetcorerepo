@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\apsnetproject\\apsnetproject.csproj": {}
+    "D:\\apsnetproject\\apsnetproject.csproj": {}
   },
   "projects": {
-    "d:\\apsnetproject\\apsnetproject.csproj": {
+    "D:\\apsnetproject\\apsnetproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\apsnetproject\\apsnetproject.csproj",
+        "projectUniqueName": "D:\\apsnetproject\\apsnetproject.csproj",
         "projectName": "apsnetproject",
-        "projectPath": "d:\\apsnetproject\\apsnetproject.csproj",
+        "projectPath": "D:\\apsnetproject\\apsnetproject.csproj",
         "packagesPath": "C:\\Users\\Denis\\.nuget\\packages\\",
-        "outputPath": "d:\\apsnetproject\\obj\\",
+        "outputPath": "D:\\apsnetproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
