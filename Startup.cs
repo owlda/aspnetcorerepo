@@ -15,6 +15,9 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace apsnetproject
 {
@@ -35,16 +38,27 @@ namespace apsnetproject
             services.AddDbContext<ModelsDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             //Authentication Services
-           services.AddAuthentication(options =>
-           {
+               string domain = $"https://{Configuration["Auth0:Domain"]}/";
+            services.AddAuthentication(options =>
+        {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
-           {
-             options.Authority = "https://dev-wxoj7kor.us.auth0.com/";
-             options.Audience = "https://api.owlda.ca";
+
+             }).AddJwtBearer(options =>
+            {
+            options.Authority = domain;
+            options.Audience = Configuration["Auth0:ApiIdentifier"];
             });
-           
+             services.AddAuthorization(options =>
+            {
+                     options.AddPolicy("read:messages", policy => policy.Requirements.Add(new HasScopeRequirement("read:messages", domain)));
+            });
+
+            // register the scope authorization handler
+               services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
+    
+             // Add framework services.
+             services.AddMvc();
            services.AddControllers();
             object p = services.AddMvc(option => option.EnableEndpointRouting = false)
                                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -65,6 +79,8 @@ namespace apsnetproject
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

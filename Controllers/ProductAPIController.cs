@@ -22,6 +22,7 @@ namespace apsnetproject.Controllers
 
 
         [HttpPost]
+        [Route("private")]
         [Authorize]
         public async Task<IActionResult> CreateVehicle([FromBody] VehicleResource vehicle){
 
