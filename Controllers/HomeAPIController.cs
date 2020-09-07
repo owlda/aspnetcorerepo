@@ -35,6 +35,8 @@ namespace apsnetproject.Controllers
 
          [HttpGet("/api/offices")]
         public async Task<IEnumerable<OfficeResource>> GetOffices(){
+
+            
              
              var listOfOffices =  await _context.Offices.Include(m => m.Makes).ToListAsync();
 
