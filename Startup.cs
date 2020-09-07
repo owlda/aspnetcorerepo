@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace apsnetproject
 {
@@ -33,7 +34,18 @@ namespace apsnetproject
 
             services.AddDbContext<ModelsDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-            services.AddControllers();
+            //Authentication Services
+           services.AddAuthentication(options =>
+           {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+           {
+             options.Authority = "https://dev-wxoj7kor.us.auth0.com/";
+             options.Audience = "https://api.owlda.ca";
+            });
+           
+           services.AddControllers();
             object p = services.AddMvc(option => option.EnableEndpointRouting = false)
                                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);

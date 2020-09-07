@@ -3,6 +3,7 @@ using apsnetproject.Controllers.Resources;
 using apsnetproject.Models;
 using apsnetproject.Persistence;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,7 @@ namespace apsnetproject.Controllers
 
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> CreateVehicle([FromBody] VehicleResource vehicle){
 
                  if(!ModelState.IsValid){

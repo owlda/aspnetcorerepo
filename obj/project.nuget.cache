@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pm3EtVaQwq/5mxr3y9Cmbvw85o/hxa3odWcS+CKLmYx8v+/5PhbTQBYNoh/dAWmnWhOOhQy8tXC7MWvOPNh2MA==",
+  "dgSpecHash": "jmvNOB+ncZ5UkNlGnNjfySAYGsT/eJwRD/RfqQRiV/b1unUEP2VLIFte+bMKnxYR8Vin65r9O/sitPW85E9WOQ==",
   "success": true,
   "projectFilePath": "D:\\apsnetproject\\apsnetproject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Denis\\.nuget\\packages\\automapper\\6.2.0\\automapper.6.2.0.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\1.2.0\\automapper.extensions.microsoft.dependencyinjection.1.2.0.nupkg.sha512",
+    "C:\\Users\\Denis\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.7\\microsoft.aspnetcore.authentication.jwtbearer.3.1.7.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.7\\microsoft.aspnetcore.jsonpatch.3.1.7.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.7\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.7.nupkg.sha512",
     "C:\\Users\\Denis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
