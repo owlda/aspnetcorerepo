@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using apsnetproject.Persistence;
 
 namespace apsnetproject.Migrations
 {
     [DbContext(typeof(ModelsDBContext))]
-    partial class ModelsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200906130834_Constrains")]
+    partial class Constrains
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,21 +84,6 @@ namespace apsnetproject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Offices");
-                });
-
-            modelBuilder.Entity("apsnetproject.Models.Vehicle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ModelId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("apsnetproject.Models.Make", b =>
