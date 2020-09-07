@@ -3,14 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace apsnetproject.Models
 {
-     [Table("Vehicle")]
+     [Table("Vehicles")]
     public class Vehicle
     {
         public int Id { get; protected set; }
+
         [Required]
-        public Contact contact { get; protected set; }
-        [Required]
-        public int ModelId { get; protected set; }
+        public int ModelId { get;  protected set; }
 
         
     }
