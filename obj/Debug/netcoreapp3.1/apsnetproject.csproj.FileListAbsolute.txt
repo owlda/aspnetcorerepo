@@ -68,3 +68,4 @@ D:\apsnetproject\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\apsnetproject\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\apsnetproject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 D:\apsnetproject\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+D:\apsnetproject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
