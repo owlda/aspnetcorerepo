@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace apsnetproject.Models
@@ -17,5 +19,13 @@ namespace apsnetproject.Models
         [Required]
         [StringLength(32)]
         public string Address { get; protected set; }
+
+        public ICollection<Contact> Contacts {get; set;}
+
+
+        public Contact()
+        {
+            Contacts = new Collection<Contact>();
+        }
     }
 }

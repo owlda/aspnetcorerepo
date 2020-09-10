@@ -3,53 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using apsnetproject.Persistence;
 
 namespace apsnetproject.Migrations
 {
     [DbContext(typeof(ModelsDBContext))]
-    partial class ModelsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200910150426_VehiclesCollections")]
+    partial class VehiclesCollections
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("apsnetproject.Models.Contact", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
-                    b.Property<int?>("ContactId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ContactId");
-
-                    b.ToTable("Contacts");
-                });
 
             modelBuilder.Entity("apsnetproject.Models.Make", b =>
                 {
@@ -117,11 +87,19 @@ namespace apsnetproject.Migrations
                     b.ToTable("Offices");
                 });
 
-            modelBuilder.Entity("apsnetproject.Models.Contact", b =>
+            modelBuilder.Entity("apsnetproject.Models.Vehicle", b =>
                 {
-                    b.HasOne("apsnetproject.Models.Contact", null)
-                        .WithMany("Contacts")
-                        .HasForeignKey("ContactId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ModelId")
+                        .HasColumnType("int");                  
+
+                    b.HasKey("Id");                    
+
+                    b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("apsnetproject.Models.Make", b =>
@@ -140,6 +118,13 @@ namespace apsnetproject.Migrations
                         .HasForeignKey("MakeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("apsnetproject.Models.Vehicle", b =>
+                {
+                    b.HasOne("apsnetproject.Models.Vehicle", null)
+                        .WithMany("Vehicles")
+                        .HasForeignKey("VehicleId");
                 });
 #pragma warning restore 612, 618
         }

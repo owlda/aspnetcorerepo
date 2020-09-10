@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,8 +33,35 @@ namespace apsnetproject.Controllers
              return _mapper.Map<List<Make>, List<MakeResource>>(listOfMakes);
 
         }
+         
+        [HttpGet("/api/contacts")]
+        public async Task<IEnumerable<ContactResource>> GetContacts(){
+             
+             var contacts = await _context.Contacts.ToListAsync();
 
-         [HttpGet("/api/offices")]
+             return _mapper.Map<List<Contact>, List<ContactResource>>(contacts);
+
+        }
+        [HttpPost("/api/addcontact")]
+         public async Task<IActionResult> CreateContact([FromBody] ContactResource info){
+
+                 if(!ModelState.IsValid){
+
+                     return BadRequest(ModelState);
+                 }
+                 else{
+
+                    var contact = _mapper.Map<ContactResource, Contact>(info);
+                    _context.Contacts.Add(contact);
+                    
+                    await _context.SaveChangesAsync();
+                 
+                    return Ok(contact);
+
+                 }
+            }
+
+        [HttpGet("/api/offices")]
         public async Task<IEnumerable<OfficeResource>> GetOffices(){
 
             
@@ -43,6 +71,7 @@ namespace apsnetproject.Controllers
              return _mapper.Map<List<Office>, List<OfficeResource>>(listOfOffices);
 
         }
+
         
     }
 }

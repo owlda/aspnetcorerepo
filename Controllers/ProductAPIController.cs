@@ -33,7 +33,7 @@ namespace apsnetproject.Controllers
                  else{
 
                     var productVehicle = _mapper.Map<VehicleResource, Vehicle>(vehicle);
-                    _context.Vehicles.Add(productVehicle);
+                   // _context.Vehicles.Add(productVehicle);
                     await _context.SaveChangesAsync();
                  
                     var res = _mapper.Map<Vehicle, VehicleResource>(productVehicle);

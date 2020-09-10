@@ -15,12 +15,12 @@ namespace apsnetproject.Mapping
 
             CreateMap<Model, ModelResource>();
 
-            CreateMap<Vehicle, VehicleResource>()
-            .ForMember(v => v.ModelId, opt => opt.MapFrom(vr => vr.ModelId));
+            CreateMap<Contact, ContactResource>();
+            
            
            // From API to Domain (DB)
-            CreateMap<VehicleResource, Vehicle>()
-            .ForMember(v => v.ModelId, opt => opt.MapFrom(vr => vr.ModelId));
+           CreateMap<VehicleResource, Vehicle>()
+           .ForMember(v => v.ModelId, opt => opt.MapFrom(vr => vr.ModelId));
         }
     }
 }
