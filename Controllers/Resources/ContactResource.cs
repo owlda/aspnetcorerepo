@@ -6,23 +6,17 @@ namespace apsnetproject.Controllers.Resources
 {
     public class ContactResource
     {
-        public int Id { get; protected set; }
+        public int Id { get;  set; }
 
 
-        public string Name { get; protected set; }
+        public string Name { get; set; }
 
 
-        public string Surname { get; protected set; }
+        public string Surname { get; set; }
 
 
-        public string Address { get; protected set; }
+        public string Address { get; set; }
 
-        public ICollection<ContactResource> Contacts {get; set;}
-
-
-        public ContactResource()
-        {
-            Contacts = new Collection<ContactResource>();
-        }
+       
     }
 }

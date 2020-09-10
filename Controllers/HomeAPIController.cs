@@ -50,13 +50,15 @@ namespace apsnetproject.Controllers
                      return BadRequest(ModelState);
                  }
                  else{
-
-                    var contact = _mapper.Map<ContactResource, Contact>(info);
-                    _context.Contacts.Add(contact);
                     
+                    var contact = _mapper.Map<ContactResource, Contact>(info);
+                    
+                    _context.Contacts.Add(contact);                    
                     await _context.SaveChangesAsync();
+
+                    var response = _mapper.Map<Contact, ContactResource>(contact);
                  
-                    return Ok(contact);
+                    return Ok(response) ;
 
                  }
             }

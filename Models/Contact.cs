@@ -1,31 +1,27 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace apsnetproject.Models
 {
+    [Table("Contacts")]
     public class Contact
     {
-        public int Id { get; protected set; }
+        public int Id { get; set; }
 
-        [Required]
+        
         [StringLength(32)]
-        public string Name { get; protected set; }
+        public string Name { get; set; }
 
-        [Required]
+        
         [StringLength(32)]
-        public string Surname { get; protected set; }
+        public string Surname { get; set; }
 
-        [Required]
+        
         [StringLength(32)]
-        public string Address { get; protected set; }
+        public string Address { get; set; }
 
-        public ICollection<Contact> Contacts {get; set;}
-
-
-        public Contact()
-        {
-            Contacts = new Collection<Contact>();
-        }
+        
     }
 }

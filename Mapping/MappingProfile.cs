@@ -19,8 +19,8 @@ namespace apsnetproject.Mapping
             
            
            // From API to Domain (DB)
-           CreateMap<VehicleResource, Vehicle>()
-           .ForMember(v => v.ModelId, opt => opt.MapFrom(vr => vr.ModelId));
+           CreateMap<ContactResource, Contact>();
+           
         }
     }
 }
