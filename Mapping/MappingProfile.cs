@@ -8,7 +8,7 @@ namespace apsnetproject.Mapping
     {
         public MappingProfile()
         {
-            // From Domain to API
+            // From Domain DB to API
             CreateMap<Make, MakeResource>();
 
             CreateMap<Office, OfficeResource>();

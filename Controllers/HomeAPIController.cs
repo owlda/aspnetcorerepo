@@ -42,6 +42,16 @@ namespace apsnetproject.Controllers
              return _mapper.Map<List<Contact>, List<ContactResource>>(contacts);
 
         }
+
+        [HttpGet("/api/contact")]
+        public async Task<IEnumerable<Contact>> GetContact(){
+             
+            //var filterObj = _mapper.Map<FilterContactResource, FilterContact>(filter);
+
+            return await _context.Contacts.ToListAsync();
+
+        }
+
         [HttpPost("/api/addcontact")]
          public async Task<IActionResult> CreateContact([FromBody] ContactResource info){
 
@@ -49,6 +59,12 @@ namespace apsnetproject.Controllers
 
                      return BadRequest(ModelState);
                  }
+                 
+                //  if(!ModelState.IsValid){
+                     
+                //      ModelState.AddModelError(string.Empty, "Empty String detected");
+                //      return BadRequest(ModelState);
+                //  }
                  else{
                     
                     var contact = _mapper.Map<ContactResource, Contact>(info);
@@ -58,7 +74,7 @@ namespace apsnetproject.Controllers
 
                     var response = _mapper.Map<Contact, ContactResource>(contact);
                  
-                    return Ok(response) ;
+                    return Ok(response);
 
                  }
             }

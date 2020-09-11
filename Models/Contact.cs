@@ -10,11 +10,11 @@ namespace apsnetproject.Models
     {
         public int Id { get; set; }
 
-        
+        [Required]
         [StringLength(32)]
         public string Name { get; set; }
 
-        
+        [Required]
         [StringLength(32)]
         public string Surname { get; set; }
 
