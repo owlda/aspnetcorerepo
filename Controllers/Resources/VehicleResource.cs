@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using apsnetproject.Models;
 
@@ -7,7 +9,14 @@ namespace apsnetproject.Controllers.Resources
     {
         public int Id { get; protected set; }
 
-       [Required]
         public int ModelId { get; protected set; }
+
+        public ICollection<VehicleResource> Vehicles { get; set; }
+
+
+          public VehicleResource()
+        {
+            Vehicles = new Collection<VehicleResource>();
+        }
     }
 }

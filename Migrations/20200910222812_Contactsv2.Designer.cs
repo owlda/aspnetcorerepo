@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using apsnetproject.Persistence;
 
 namespace apsnetproject.Migrations
 {
     [DbContext(typeof(ModelsDBContext))]
-    partial class ModelsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200910222812_Contactsv2")]
+    partial class Contactsv2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,12 +32,10 @@ namespace apsnetproject.Migrations
                         .HasMaxLength(32);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(32)")
                         .HasMaxLength(32);
 
                     b.Property<string>("Surname")
-                        .IsRequired()
                         .HasColumnType("nvarchar(32)")
                         .HasMaxLength(32);
 

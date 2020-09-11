@@ -12,8 +12,9 @@ namespace apsnetproject.Persistence
         }
 
         public DbSet<Make> Makes { get; set; }
-        public DbSet<Office> Offices { get; set; }
-        public DbSet<Vehicle> Vehicles { get;set; }
+        public DbSet<Office> Offices { get; set; }       
+        public DbSet<Contact> Contacts { get; set; }
+       
         
     }
 }
