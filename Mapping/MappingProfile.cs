@@ -16,6 +16,8 @@ namespace apsnetproject.Mapping
             CreateMap<Model, ModelResource>();
 
             CreateMap<Contact, ContactResource>();
+
+            CreateMap<Contact, FilterResource>();
             
            
            // From API to Domain (DB)

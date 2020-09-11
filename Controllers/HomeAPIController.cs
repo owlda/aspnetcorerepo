@@ -42,6 +42,14 @@ namespace apsnetproject.Controllers
              return _mapper.Map<List<Contact>, List<ContactResource>>(contacts);
 
         }
+       [HttpGet("/api/minicontacts")]
+        public async Task<IEnumerable<FilterResource>> GetMiniContacts(){
+             
+             var contacts = await _context.Contacts.ToListAsync();
+
+             return _mapper.Map<List<Contact>, List<FilterResource>>(contacts);
+
+        }
 
         [HttpGet("/api/contact")]
         public async Task<IEnumerable<Contact>> GetContact(){
