@@ -46,8 +46,6 @@ namespace apsnetproject.Controllers
         [HttpGet("/api/contact")]
         public async Task<IEnumerable<Contact>> GetContact(){
              
-            //var filterObj = _mapper.Map<FilterContactResource, FilterContact>(filter);
-
             return await _context.Contacts.ToListAsync();
 
         }
@@ -59,12 +57,6 @@ namespace apsnetproject.Controllers
 
                      return BadRequest(ModelState);
                  }
-                 
-                //  if(!ModelState.IsValid){
-                     
-                //      ModelState.AddModelError(string.Empty, "Empty String detected");
-                //      return BadRequest(ModelState);
-                //  }
                  else{
                     
                     var contact = _mapper.Map<ContactResource, Contact>(info);

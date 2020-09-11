@@ -9,6 +9,9 @@ namespace apsnetproject.Mapping
         {
             // API Resources to Domain models -> DB
             CreateMap<FilterContactResource, ContactResource>();
+
+            // Domain models -> API Resources
+            CreateMap<ContactResource, FilterContactResource>();
         }
     }
 }
