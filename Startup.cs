@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using apsnetproject.Services;
 
 namespace apsnetproject
 {
@@ -34,7 +35,7 @@ namespace apsnetproject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper();
-
+            //services.AddTransient<StatisticsService>();
             services.AddDbContext<ModelsDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             //Authentication Services

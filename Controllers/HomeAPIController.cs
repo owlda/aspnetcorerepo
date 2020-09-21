@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using apsnetproject.Controllers.Resources;
 using apsnetproject.Models;
 using apsnetproject.Persistence;
+using apsnetproject.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace apsnetproject.Controllers
 {
@@ -19,10 +21,13 @@ namespace apsnetproject.Controllers
     {
          private readonly ModelsDBContext _context;
          private readonly IMapper _mapper;
+
+         private readonly StatisticsService _statistics;
         public HomeAPIController(ModelsDBContext context, IMapper imapper)
         {
             this._context = context;
             this._mapper = imapper;
+            
         }
 
         [HttpGet("/")]
